@@ -16,6 +16,7 @@ import javax.inject.Singleton;
 public class ScrambleDelegate {
 
 	Provider<TimeStamper> timeStamperProvider;
+
 	@Inject
 	public ScrambleDelegate(Provider<TimeStamper> timeStamperProvider) {
 		this.timeStamperProvider = timeStamperProvider;
@@ -35,6 +36,6 @@ public class ScrambleDelegate {
 		}
 
 		String timeStamp = timeStamperProvider.get().generateTimeStamp();
-		return timeStamp + "    " + mixedChars;
+		return timeStamp + " ScrambleDelegate" + mixedChars + "]";
 	}
 }

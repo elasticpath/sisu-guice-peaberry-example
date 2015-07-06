@@ -14,12 +14,10 @@ import javax.inject.Named;
 @Named
 public class TimeStamper {
 
-
-
 	public String generateTimeStamp() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Calendar calendar = Calendar.getInstance();
 		Date now = calendar.getTime();
-		return dateFormat.format(now);
+		return "TimeStamper[" + dateFormat.format(now) + "]";
 	}
 }

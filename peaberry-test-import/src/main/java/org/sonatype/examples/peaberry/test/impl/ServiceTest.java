@@ -12,6 +12,7 @@ package org.sonatype.examples.peaberry.test.impl;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 import org.eclipse.sisu.EagerSingleton;
 import org.ops4j.peaberry.ServiceUnavailableException;
@@ -24,7 +25,7 @@ class ServiceTest
     private static final String TEXT = "This is a simple test of peaberry.";
 
     @Inject
-    ServiceTest( final Scramble scramble )
+    ServiceTest( final Scramble scramble, final Provider<CustomInjectionPointExample> customInjectionPointExampleProvider)
     {
         // quick'n'dirty test thread
         new Thread( new Runnable()
@@ -35,7 +36,13 @@ class ServiceTest
                 {
                     try
                     {
-                        System.out.println( '[' + scramble.process( TEXT ) + ']' );
+                        System.out.println( "OSGI Service: { " +
+								scramble.process(TEXT) +
+								" }  |  " +
+								"Guice CustomInjections: {" +
+								customInjectionPointExampleProvider.get()
+										.printCustomInjectionPoints() +
+								" }" );
                     }
                     catch ( final ServiceUnavailableException e )
                     {
