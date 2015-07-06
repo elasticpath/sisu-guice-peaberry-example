@@ -23,9 +23,10 @@
 	<name>Sisu - Peaberry example</name>
 
 	<modules>
-		<module>peaberry-test-api</module>
-		<module>peaberry-test-import</module>
-		<module>peaberry-test-export</module>
+		<module>sisu-service-apis</module>
+		<module>sisu-simple-service-exporter</module>
+		<module>sisu-custom-injected-service-exporter</module>
+		<module>sisu-service-consumer</module>
 		<module>main</module>
 	</modules>
 
