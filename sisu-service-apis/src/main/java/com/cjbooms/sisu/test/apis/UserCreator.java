@@ -1,4 +1,4 @@
-package com.cjbooms.sisu.test;
+package com.cjbooms.sisu.test.apis;
 
 public interface UserCreator {
 

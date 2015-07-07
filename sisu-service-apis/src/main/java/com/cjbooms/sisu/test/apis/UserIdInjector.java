@@ -1,4 +1,4 @@
-package com.cjbooms.sisu.test;
+package com.cjbooms.sisu.test.apis;
 
 import java.lang.reflect.Field;
 

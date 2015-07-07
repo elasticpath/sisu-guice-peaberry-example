@@ -5,7 +5,7 @@ import static org.ops4j.peaberry.util.TypeLiterals.export;
 
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.WordGenerator;
+import com.cjbooms.sisu.test.apis.WordGenerator;
 import com.cjbooms.sisu.test.impl.WordGeneratorImpl;
 import com.google.inject.AbstractModule;
 

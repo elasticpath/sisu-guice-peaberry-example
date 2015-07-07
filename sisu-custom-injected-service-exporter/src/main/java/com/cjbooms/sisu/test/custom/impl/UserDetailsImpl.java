@@ -2,9 +2,9 @@ package com.cjbooms.sisu.test.custom.impl;
 
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.InjectScope;
-import com.cjbooms.sisu.test.InjectUserId;
-import com.cjbooms.sisu.test.User;
+import com.cjbooms.sisu.test.apis.InjectScope;
+import com.cjbooms.sisu.test.apis.InjectUserId;
+import com.cjbooms.sisu.test.apis.User;
 
 @Named
 public class UserDetailsImpl implements User {

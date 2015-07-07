@@ -1,4 +1,4 @@
-package com.cjbooms.sisu.test;
+package com.cjbooms.sisu.test.apis;
 
 import java.lang.reflect.Field;
 
@@ -11,14 +11,14 @@ import com.google.inject.spi.TypeListener;
 
 @Singleton
 @Named
-public class ScopeTypeListener implements TypeListener {
+public class UserIdTypeListener implements TypeListener {
 
 	public <T> void hear(TypeLiteral<T> typeLiteral, TypeEncounter<T> typeEncounter) {
 		Class<?> clazz = typeLiteral.getRawType();
 		while (clazz != null) {
 			for (Field field : clazz.getDeclaredFields()) {
-				if (field.isAnnotationPresent(InjectScope.class)) {
-					typeEncounter.register(new ScopeInjector<T>(field));
+				if (field.isAnnotationPresent(InjectUserId.class)) {
+					typeEncounter.register(new UserIdInjector<T>(field));
 				}
 			}
 			clazz = clazz.getSuperclass();

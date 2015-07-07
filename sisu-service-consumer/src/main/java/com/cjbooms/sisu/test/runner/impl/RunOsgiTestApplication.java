@@ -3,8 +3,8 @@ package com.cjbooms.sisu.test.runner.impl;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.UserCreator;
-import com.cjbooms.sisu.test.WordGenerator;
+import com.cjbooms.sisu.test.apis.UserCreator;
+import com.cjbooms.sisu.test.apis.WordGenerator;
 
 import org.eclipse.sisu.EagerSingleton;
 import org.ops4j.peaberry.ServiceUnavailableException;

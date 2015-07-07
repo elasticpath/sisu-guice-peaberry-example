@@ -13,7 +13,7 @@ package com.cjbooms.sisu.test.peaberry;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.WordGenerator;
+import com.cjbooms.sisu.test.apis.WordGenerator;
 
 import org.eclipse.sisu.EagerSingleton;
 import org.ops4j.peaberry.Export;

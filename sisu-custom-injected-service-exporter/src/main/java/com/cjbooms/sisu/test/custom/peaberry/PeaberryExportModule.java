@@ -5,9 +5,9 @@ import static org.ops4j.peaberry.util.TypeLiterals.export;
 
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.ScopeTypeListener;
-import com.cjbooms.sisu.test.UserCreator;
-import com.cjbooms.sisu.test.UserIdTypeListener;
+import com.cjbooms.sisu.test.apis.ScopeTypeListener;
+import com.cjbooms.sisu.test.apis.UserCreator;
+import com.cjbooms.sisu.test.apis.UserIdTypeListener;
 import com.cjbooms.sisu.test.custom.impl.UserCreatorImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.matcher.Matchers;

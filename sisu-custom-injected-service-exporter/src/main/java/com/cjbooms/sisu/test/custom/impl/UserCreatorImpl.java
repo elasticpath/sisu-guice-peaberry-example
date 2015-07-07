@@ -6,8 +6,8 @@ import javax.inject.Named;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
-import com.cjbooms.sisu.test.User;
-import com.cjbooms.sisu.test.UserCreator;
+import com.cjbooms.sisu.test.apis.User;
+import com.cjbooms.sisu.test.apis.UserCreator;
 
 @Singleton
 @Named

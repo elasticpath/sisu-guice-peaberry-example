@@ -13,7 +13,7 @@ package com.cjbooms.sisu.test.custom.peaberry;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.UserCreator;
+import com.cjbooms.sisu.test.apis.UserCreator;
 
 import org.eclipse.sisu.EagerSingleton;
 import org.ops4j.peaberry.Export;

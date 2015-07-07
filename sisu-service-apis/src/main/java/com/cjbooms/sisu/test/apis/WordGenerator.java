@@ -1,4 +1,4 @@
-package com.cjbooms.sisu.test;
+package com.cjbooms.sisu.test.apis;
 
 // simple service that generates a timestamp plus words
 public interface WordGenerator {

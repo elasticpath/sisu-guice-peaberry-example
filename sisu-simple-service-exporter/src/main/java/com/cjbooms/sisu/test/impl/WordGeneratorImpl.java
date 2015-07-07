@@ -3,7 +3,7 @@ package com.cjbooms.sisu.test.impl;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.cjbooms.sisu.test.WordGenerator;
+import com.cjbooms.sisu.test.apis.WordGenerator;
 
 
 // Random word generator
