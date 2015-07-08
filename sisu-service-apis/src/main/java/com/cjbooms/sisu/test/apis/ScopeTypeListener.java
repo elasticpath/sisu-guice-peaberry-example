@@ -2,15 +2,10 @@ package com.cjbooms.sisu.test.apis;
 
 import java.lang.reflect.Field;
 
-import javax.inject.Named;
-import javax.inject.Singleton;
-
 import com.google.inject.TypeLiteral;
 import com.google.inject.spi.TypeEncounter;
 import com.google.inject.spi.TypeListener;
 
-@Singleton
-@Named
 public class ScopeTypeListener implements TypeListener {
 
 	public <T> void hear(TypeLiteral<T> typeLiteral, TypeEncounter<T> typeEncounter) {
