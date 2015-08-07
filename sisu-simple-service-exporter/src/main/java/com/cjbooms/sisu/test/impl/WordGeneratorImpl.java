@@ -5,9 +5,14 @@ import javax.inject.Named;
 
 import com.cjbooms.sisu.test.apis.WordGenerator;
 
+import org.osgi.service.component.annotations.Component;
+
 
 // Random word generator
 @Named
+@Component(
+			service = WordGenerator.class,
+			immediate = true)
 public class WordGeneratorImpl implements WordGenerator {
 
 

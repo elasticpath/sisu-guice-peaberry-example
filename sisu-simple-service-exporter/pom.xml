@@ -22,6 +22,15 @@
 			<artifactId>sisu-service-apis</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.cjbooms</groupId>
+			<artifactId>scr-peaberry-annotation-processor</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,0 +1,18 @@
+package ${packageName};
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import ${serviceInterface};
+
+import org.eclipse.sisu.EagerSingleton;
+import org.ops4j.peaberry.Export;
+
+@Named
+@EagerSingleton
+public class ${serviceInterfaceSimpleName}PeaberryServiceExport {
+
+	@Inject
+	Export<${serviceInterfaceSimpleName}> service;
+
+}

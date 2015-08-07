@@ -9,8 +9,13 @@ import javax.inject.Singleton;
 import com.cjbooms.sisu.test.apis.User;
 import com.cjbooms.sisu.test.apis.UserCreator;
 
+import org.osgi.service.component.annotations.Component;
+
 @Singleton
 @Named
+@Component(
+		service = UserCreator.class,
+		immediate = true)
 public class UserCreatorImpl implements UserCreator {
 
 	Provider<User> userProvider;
