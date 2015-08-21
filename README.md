@@ -1,4 +1,12 @@
 ## An example of Sisu, Peaberry, and Guice in an OSGI application
+This is an example project that uses the following technolgies to create a dymanic OSGI application:
+* Sisu - to auto bootstrap the dependency injection using Guice in each module based on the JSR-330 @Named and @Inject annotations present
+* Peaberry - to manage the exporting and importing of services to the OSGI registry
+* Peaberry-Code-Generator - To auto-generate the peaberry classes from annotations at compile time
+* Guice - To define custom injection type listeners
+* maven-remote-resources-plugin - To centrally configure the custom Guice Type Listeners
+* bnd-maven-plugin - To build the OSGI bundles and generate the manifest files
+* OSGI Release 6 Metatype Annotations - To auto-generate metatype XML for our ManagedService's configuration admin entry
 
 ### To build
 mvn clean install
@@ -10,16 +18,21 @@ mvn exec:exec -pl main
 port 8000
 
 ### Expected Output
-Every 2 seconds the ServiceTest class will print a line of text to the console containing the following:
-* Using an OSGI Service import (Scramble) it should print the following two things:
-  * A new TimeStamper instance, which is injected as a Provider<TimeStamper>, should print the current time
-  * A Singleton ScrambleDelegate, which is a constructor injected, should print some scrambled text
-* Using Guice's CustomInjection functionality the next two things:
-  * A userId, which is pulled from a list of userIds at instantiation time
-  * A scope, which is pulled from a list of scopes at instantiation time
+Every 5 seconds a Service Consumer will generate some console output from dynamically injected services.
+* Two separate WordGenerator services should appear that generate random words
+  * ThreeWordGenerator is a ManagedService. Its output can be changes using the Config Admin in the [Felix Webconsole]
+  (http://localhost:8080/system/console/configMgr)
+  * TwoWordGenerator is a simple service that generates two words.
+* A UserGenerator service should be injected that generates random users. It makes use of Guice Custom Injections to do so dynamically.
 
 ##### Sample Output
-OSGI Service: { TimeStamper[2015/07/06 18:29:31] ScrambleDelegate[C@76a22b9c] }  |  Guice CustomInjections: {UserID[cjbooms] Scope[I'm a store...] }
+````
+Test Services
+    Word Generators:
+        [Two, Words]
+        [Hey, Ho, Let's Go] generated at time: 2015/08/21 16:30:04
+    User Generator: Tadgh likes OSGI!
+````
 
 
 
