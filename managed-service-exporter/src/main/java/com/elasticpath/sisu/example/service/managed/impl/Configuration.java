@@ -4,20 +4,20 @@ import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 /**
- * Created by conor on 19/08/15.
+ * Configuration for the three word generator service.
  */
-@ObjectClassDefinition(id = "com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator",
-		pid = {"com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator" })
-public interface Configuration {
+@ObjectClassDefinition(
+		id = "com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator",
+		pid = {"com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator" },
+		description = "Configuration for the exciting ThreeWordGenerator Service",
+		name = "Three Word Generator Configuration")
+public @interface Configuration {
 
-	public static final String PROPERTY_ONE_NAME = "property.one";
-	public static final String PROPERTY_TWO_NAME = "property.two";
-	public static final String PROPERTY_THREE_NAME = "property.three";
 
-	@AttributeDefinition(name = PROPERTY_ONE_NAME, defaultValue = "aon")
-	String getPropertyOne();
-	@AttributeDefinition(name = PROPERTY_TWO_NAME, defaultValue = "do")
-	String getPropertyTwo();
-	@AttributeDefinition(name = PROPERTY_THREE_NAME, defaultValue = "tri")
-	String getPropertyThree();
+	@AttributeDefinition(name = "First Word", defaultValue = "aon")
+	String propertyOne();
+	@AttributeDefinition(name = "Second Word", defaultValue = "do")
+	String propertyTwo();
+	@AttributeDefinition(name = "Third Word", defaultValue = "tri")
+	String propertyThree();
 }

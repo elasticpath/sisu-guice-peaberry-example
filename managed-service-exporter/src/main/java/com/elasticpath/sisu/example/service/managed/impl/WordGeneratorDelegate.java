@@ -20,6 +20,6 @@ public class WordGeneratorDelegate {
 
 	public String process(final String... words) {
 		String timeStamp = timeStamperProvider.get().generateTimeStamp();
-		return timeStamp + " " + Arrays.toString(words);
+		return Arrays.toString(words) + " generated at time: " + timeStamp;
 	}
 }

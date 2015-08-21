@@ -17,7 +17,7 @@ class RunOsgiTestApplication {
 	@Inject
 	RunOsgiTestApplication(
 			@ServiceImport
-			final WordGenerator wordGenerator,
+			final Iterable<WordGenerator> wordGenerators,
 			@ServiceImport
 			final UserGenerator userGenerator) {
 
@@ -27,8 +27,14 @@ class RunOsgiTestApplication {
 				while (true) {
 					try {
 						System.out.println("Test Services");
-						System.out.println("    Word Generators: " + wordGenerator.generateWords());
+
+						System.out.println("    Word Generators: ");
+						for (WordGenerator wordGenerator : wordGenerators) {
+							System.out.println("        " + wordGenerator.generateWords());
+						}
+
 						System.out.println("    User Generator: " + userGenerator.generateUser().printUserDetails());
+
 						System.out.println();
 					} catch (final ServiceUnavailableException e) {
 						System.err.println("Services not found!");

@@ -36,9 +36,9 @@ public class ThreeWordGenerator implements WordGenerator, ManagedService {
 		if (config == null) {
 			return;
 		}
-		wordOne = config.get(Configuration.PROPERTY_ONE_NAME).toString();
-		wordTwo = config.get(Configuration.PROPERTY_TWO_NAME).toString();
-		wordThree = config.get(Configuration.PROPERTY_THREE_NAME).toString();
+		wordOne = config.get("propertyOne").toString();
+		wordTwo = config.get("propertyTwo").toString();
+		wordThree = config.get("propertyThree").toString();
 	}
 
 
