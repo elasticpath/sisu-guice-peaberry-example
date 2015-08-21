@@ -15,6 +15,12 @@
 	<name>Service using Guice custom injections</name>
 	<description>An OSGI Service example using Guice custom injections for internal wiring</description>
 
+	<properties>
+		<injections.groupId>com.elasticpath</injections.groupId>
+		<injections.artifactId>com.elasticpath.sisu.example.custom-injection-definitions</injections.artifactId>
+		<injections.version>${project.version}</injections.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.elasticpath</groupId>
@@ -22,8 +28,8 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.elasticpath</groupId>
-			<artifactId>com.elasticpath.sisu.example.custom-injection-definitions</artifactId>
+			<groupId>${injections.groupId}</groupId>
+			<artifactId>${injections.artifactId}</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -46,7 +52,7 @@
 						</goals>
 						<configuration>
 							<resourceBundles>
-								<resourceBundle>com.cjbooms:guice-custom-injection-definitions:${project.version}</resourceBundle>
+								<resourceBundle>${injections.groupId}:${injections.artifactId}:${injections.version}</resourceBundle>
 							</resourceBundles>
 						</configuration>
 					</execution>

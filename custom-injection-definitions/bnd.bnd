@@ -1,2 +1,2 @@
 -exportcontents: \
-	com.elasticpath.sisu.guice.custom
+	com.elasticpath.sisu.example.guice.custom

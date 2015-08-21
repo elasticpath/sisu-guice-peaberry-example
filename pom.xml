@@ -8,11 +8,11 @@
 	<artifactId>com.elasticpath.sisu.example.sisu-guice-peaberry-example</artifactId>
 	<version>0-SNAPSHOT</version>
 
-	<name>Sisu-Peaberry-Guice Osgi Example Project</name>
+	<name>Sisu Peaberry Guice Osgi Example Project</name>
 	<description>A showcase of the OSGI technologies: Sisu, Guice, Peaberry, Peaberry Code Generation, and R6 Metatype annotations</description>
 
 	<modules>
-		<module>sisu-service-apis</module>
+		<module>service-apis</module>
 		<module>managed-service-exporter</module>
 		<module>custom-injection-definitions</module>
 		<module>custom-injected-service-exporter</module>

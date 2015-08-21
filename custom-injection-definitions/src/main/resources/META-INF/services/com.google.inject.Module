@@ -1,1 +1,1 @@
-com.elasticpath.sisu.guice.custom.CustomTypeListenersModule
+com.elasticpath.sisu.example.guice.custom.CustomTypeListenersModule
