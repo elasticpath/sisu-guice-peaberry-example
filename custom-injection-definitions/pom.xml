@@ -3,12 +3,15 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>sisu-scr-example</artifactId>
-		<groupId>com.cjbooms</groupId>
+		<groupId>com.elasticpath</groupId>
+		<artifactId>com.elasticpath.sisu.example.sisu-guice-peaberry-example</artifactId>
 		<version>0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>guice-custom-injection-definitions</artifactId>
+	<artifactId>com.elasticpath.sisu.example.custom-injection-definitions</artifactId>
+
+	<name>Custom Injection APIs TypeListener's and Maven Config</name>
+	<description>Defines Guice Custom Injection annotations, corresponding TypeListeners, and reusable maven config for consumers</description>
 
 	<properties>
 		<remote.resources.config>${project.build.outputDirectory}/META-INF/maven</remote.resources.config>

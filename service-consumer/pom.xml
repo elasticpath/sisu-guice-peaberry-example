@@ -5,19 +5,20 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.cjbooms</groupId>
-		<artifactId>sisu-scr-example</artifactId>
+		<groupId>com.elasticpath</groupId>
+		<artifactId>com.elasticpath.sisu.example.sisu-guice-peaberry-example</artifactId>
 		<version>0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>sisu-service-consumer</artifactId>
+	<artifactId>com.elasticpath.sisu.example.service-consumer</artifactId>
 
-	<name>Sisu - example | Consumes OSGI services</name>
+	<name>Services Consumer</name>
+	<description>Consumes multiple OSGI services using auto generated Peaberry code</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.cjbooms</groupId>
-			<artifactId>sisu-service-apis</artifactId>
+			<groupId>com.elasticpath</groupId>
+			<artifactId>com.elasticpath.sisu.example.service-apis</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

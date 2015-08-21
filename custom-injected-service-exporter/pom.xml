@@ -5,24 +5,25 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.cjbooms</groupId>
-		<artifactId>sisu-scr-example</artifactId>
+		<groupId>com.elasticpath</groupId>
+		<artifactId>com.elasticpath.sisu.example.sisu-guice-peaberry-example</artifactId>
 		<version>0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>sisu-custom-injected-service-exporter</artifactId>
+	<artifactId>com.elasticpath.sisu.example.custom-injected-service-exporter</artifactId>
 
-	<name>Sisu - example | Exports a simple OSGI service</name>
+	<name>Service using Guice custom injections</name>
+	<description>An OSGI Service example using Guice custom injections for internal wiring</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.cjbooms</groupId>
-			<artifactId>sisu-service-apis</artifactId>
+			<groupId>com.elasticpath</groupId>
+			<artifactId>com.elasticpath.sisu.example.service-apis</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.cjbooms</groupId>
-			<artifactId>guice-custom-injection-definitions</artifactId>
+			<groupId>com.elasticpath</groupId>
+			<artifactId>com.elasticpath.sisu.example.custom-injection-definitions</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
