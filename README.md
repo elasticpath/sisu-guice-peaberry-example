@@ -1,17 +1,20 @@
 ## An example of Sisu, Peaberry, and Guice in an OSGI application
 This is an example project that uses the following technolgies to create a dymanic OSGI application:
-* Sisu - to auto bootstrap the dependency injection using Guice in each module based on the JSR-330 @Named and @Inject annotations present
-* Peaberry - to manage the exporting and importing of services to the OSGI registry
-* Peaberry-Code-Generator - To auto-generate the peaberry classes from annotations at compile time
-* Guice - To define custom injection type listeners
-* maven-remote-resources-plugin - To centrally configure the custom Guice Type Listeners
-* bnd-maven-plugin - To build the OSGI bundles and generate the manifest files
-* OSGI Release 6 Metatype Annotations - To auto-generate metatype XML for our ManagedService's configuration admin entry
+* [Sisu](https://www.eclipse.org/sisu/) - to auto bootstrap the dependency injection using Guice in each module based on the JSR-330 @Named and @Inject annotations present
+* [Peaberry](https://github.com/ops4j/peaberry) - to manage the exporting and importing of services to the OSGI registry
+* [Peaberry-Code-Generator](https://github.com/elasticpath/peaberry-code-generator) - To auto-generate the peaberry classes from annotations at compile time
+* [Guice](https://github.com/google/guice) - To define custom injection type listeners
+* [Maven Remote Resources Plugin](http://maven.apache.org/plugins/maven-remote-resources-plugin/) - To centrally configure the custom Guice Type
+ Listeners once
+* [bnd Maven Plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html) - To build the OSGI bundles and generate the manifest
+files, without having to modify the packaging type
+* [OSGI Release 6 Metatype Annotations](https://osgi.org/download/osgi.cmpn-6.0.0-pfd.pdf) - To auto-generate metatype XML for our
+ManagedService's ConfigAdmin entry
 
 ### To build
 mvn clean install
 
-### To launch the example in a Felix container (with the old text console installed)
+### To launch the example in a Felix container
 mvn exec:exec -pl main
 
 ### To debug
