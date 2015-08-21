@@ -7,6 +7,7 @@ import com.cjbooms.sisu.test.apis.UserCreator;
 import com.cjbooms.sisu.test.apis.WordGenerator;
 
 import org.eclipse.sisu.EagerSingleton;
+import org.eclipse.sisu.contrib.peaberry.annotations.ServiceImport;
 import org.ops4j.peaberry.ServiceUnavailableException;
 
 @Named
@@ -16,7 +17,11 @@ class RunOsgiTestApplication {
 	private static final int TWO = 2;
 
 	@Inject
-	RunOsgiTestApplication(final WordGenerator wordGenerator, final UserCreator userCreator) {
+	RunOsgiTestApplication(
+			@ServiceImport
+			final WordGenerator wordGenerator,
+			@ServiceImport
+			final UserCreator userCreator) {
 
 		// test thread
 		new Thread(new Runnable() {

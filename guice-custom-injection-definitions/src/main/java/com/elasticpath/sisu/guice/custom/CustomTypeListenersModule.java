@@ -1,4 +1,4 @@
-package com.cjbooms.sisu.test.apis;
+package com.elasticpath.sisu.guice.custom;
 
 
 import com.google.inject.AbstractModule;

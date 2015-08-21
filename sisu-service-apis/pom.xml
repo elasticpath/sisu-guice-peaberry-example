@@ -12,48 +12,15 @@
 		<version>0-SNAPSHOT</version>
 	</parent>
 
-
-	<packaging>bundle</packaging>
-
 	<artifactId>sisu-service-apis</artifactId>
 
 	<name>Sisu - example | Service APIs</name>
 
-	<properties>
-		<remote.resources.config>${project.build.outputDirectory}/META-INF/maven</remote.resources.config>
-	</properties>
 	<build>
 		<plugins>
-			<!-- Generate a remote-resources config file that points to the shared guice type-listeners resource. This will allow other
-			 projects to download the resource at build time and include it-->
 			<plugin>
-				<artifactId>maven-remote-resources-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>bundle</goal>
-						</goals>
-						<configuration>
-							<includes>
-								<include>META-INF/services/com.google.inject.Module</include>
-							</includes>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<inherited>false</inherited>
-				<configuration>
-					<instructions>
-						<Include-Resource>
-							$(if;$(dir;${remote.resources.config});META-INF/maven=${remote.resources.config}),
-							{maven-resources}
-						</Include-Resource>
-					</instructions>
-				</configuration>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

@@ -28,7 +28,7 @@
 		<module>sisu-custom-injected-service-exporter</module>
 		<module>sisu-service-consumer</module>
 		<module>main</module>
-		<module>scr-peaberry-annotation-processor</module>
+		<module>guice-custom-injection-definitions</module>
 	</modules>
 
 	<properties>
@@ -83,20 +83,28 @@
 
 			<dependency>
 				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.core</artifactId>
-				<version>5.0.0</version>
+				<artifactId>osgi.core</artifactId>
+				<version>6.0.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.compendium</artifactId>
-				<version>5.0.0</version>
+				<artifactId>osgi.cmpn</artifactId>
+				<version>6.0.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>org.apache.felix.framework</artifactId>
-				<version>4.4.1</version>
+				<version>5.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.elasticpath</groupId>
+				<artifactId>com.elasticpath.sisu.peaberry-code-generator</artifactId>
+				<version>0-SNAPSHOT</version>
+				<scope>compile</scope>
 			</dependency>
 		</dependencies>
+
 
 
 	</dependencyManagement>
@@ -104,22 +112,24 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>org.apache.felix</groupId>
-					<artifactId>maven-bundle-plugin</artifactId>
-					<version>2.5.3</version>
-					<extensions>true</extensions>
-					<configuration>
-						<instructions>
-							<Include-Resource>
-								$(if;$(dir;${sisu.meta});META-INF/sisu=${sisu.meta}),
-								$(if;$(dir;${services.meta});META-INF/services=${services.meta})
-							</Include-Resource>
-						</instructions>
-					</configuration>
+					<groupId>biz.aQute.bnd</groupId>
+					<artifactId>bnd-maven-plugin</artifactId>
+					<version>2.4.1</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>bnd-process</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>2.6</version>
+					<configuration>
+						<useDefaultManifestFile>true</useDefaultManifestFile>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>

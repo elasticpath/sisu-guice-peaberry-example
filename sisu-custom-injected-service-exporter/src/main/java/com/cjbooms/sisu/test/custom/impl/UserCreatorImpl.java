@@ -8,14 +8,11 @@ import javax.inject.Singleton;
 
 import com.cjbooms.sisu.test.apis.User;
 import com.cjbooms.sisu.test.apis.UserCreator;
-
-import org.osgi.service.component.annotations.Component;
+import org.eclipse.sisu.contrib.peaberry.annotations.ServiceExport;
 
 @Singleton
 @Named
-@Component(
-		service = UserCreator.class,
-		immediate = true)
+@ServiceExport(service = UserCreator.class)
 public class UserCreatorImpl implements UserCreator {
 
 	Provider<User> userProvider;

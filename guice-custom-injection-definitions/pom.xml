@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>sisu-scr-example</artifactId>
+		<groupId>com.cjbooms</groupId>
+		<version>0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>guice-custom-injection-definitions</artifactId>
+
+	<properties>
+		<remote.resources.config>${project.build.outputDirectory}/META-INF/maven</remote.resources.config>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- Generate a remote-resources config file that points to the shared guice type-listeners resource. This will allow other
+			 projects to download the resource at build time and include it-->
+			<plugin>
+				<artifactId>maven-remote-resources-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>bundle</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>META-INF/services/com.google.inject.Module</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

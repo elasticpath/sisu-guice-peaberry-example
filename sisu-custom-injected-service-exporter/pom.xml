@@ -10,8 +10,6 @@
 		<version>0-SNAPSHOT</version>
 	</parent>
 
-	<packaging>bundle</packaging>
-
 	<artifactId>sisu-custom-injected-service-exporter</artifactId>
 
 	<name>Sisu - example | Exports a simple OSGI service</name>
@@ -23,13 +21,13 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.compendium</artifactId>
+			<groupId>com.cjbooms</groupId>
+			<artifactId>guice-custom-injection-definitions</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.cjbooms</groupId>
-			<artifactId>scr-peaberry-annotation-processor</artifactId>
-			<version>${project.version}</version>
+			<groupId>com.elasticpath</groupId>
+			<artifactId>com.elasticpath.sisu.peaberry-code-generator</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -47,15 +45,15 @@
 						</goals>
 						<configuration>
 							<resourceBundles>
-								<resourceBundle>com.cjbooms:sisu-service-apis:${project.version}</resourceBundle>
+								<resourceBundle>com.cjbooms:guice-custom-injection-definitions:${project.version}</resourceBundle>
 							</resourceBundles>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
