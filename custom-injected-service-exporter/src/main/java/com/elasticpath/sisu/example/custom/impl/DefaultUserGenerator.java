@@ -12,7 +12,7 @@ import org.eclipse.sisu.contrib.peaberry.annotations.ServiceExport;
 
 @Singleton
 @Named
-@ServiceExport(service = UserGenerator.class)
+@ServiceExport(interfaces = UserGenerator.class)
 public class DefaultUserGenerator implements UserGenerator {
 
 	Provider<User> userProvider;

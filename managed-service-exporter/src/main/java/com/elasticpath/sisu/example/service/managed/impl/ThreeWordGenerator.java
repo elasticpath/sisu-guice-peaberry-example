@@ -15,7 +15,7 @@ import com.elasticpath.sisu.example.apis.WordGenerator;
 // Random word generator
 @Named
 @Singleton
-@ServiceExport( service = WordGenerator.class )
+@ServiceExport(interfaces = WordGenerator.class)
 public class ThreeWordGenerator implements WordGenerator, ManagedService {
 
 	String wordOne = "Hey";

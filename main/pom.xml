@@ -75,7 +75,6 @@
 		<dependency>
 			<groupId>com.elasticpath</groupId>
 			<artifactId>com.elasticpath.sisu.peaberry-code-generator</artifactId>
-			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
 

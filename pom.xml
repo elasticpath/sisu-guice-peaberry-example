@@ -93,7 +93,7 @@
 			<dependency>
 				<groupId>com.elasticpath</groupId>
 				<artifactId>com.elasticpath.sisu.peaberry-code-generator</artifactId>
-				<version>0-SNAPSHOT</version>
+				<version>1.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
