@@ -48,6 +48,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.elasticpath</groupId>
+			<artifactId>com.elasticpath.sisu.example.secondary-service-exporter</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.elasticpath</groupId>
 			<artifactId>com.elasticpath.sisu.example.custom-injection-definitions</artifactId>
 			<version>${project.version}</version>
 			<scope>runtime</scope>

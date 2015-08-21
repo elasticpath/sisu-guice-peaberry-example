@@ -7,23 +7,23 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 import com.elasticpath.sisu.example.apis.User;
-import com.elasticpath.sisu.example.apis.UserCreator;
+import com.elasticpath.sisu.example.apis.UserGenerator;
 import org.eclipse.sisu.contrib.peaberry.annotations.ServiceExport;
 
 @Singleton
 @Named
-@ServiceExport(service = UserCreator.class)
-public class UserCreatorImpl implements UserCreator {
+@ServiceExport(service = UserGenerator.class)
+public class DefaultUserGenerator implements UserGenerator {
 
 	Provider<User> userProvider;
 
 	@Inject
-	public UserCreatorImpl(final Provider<User> userProvider) {
+	public DefaultUserGenerator(final Provider<User> userProvider) {
 		this.userProvider = userProvider;
 	}
 
 	@Override
-	public User createUser() {
+	public User generateUser() {
 		return userProvider.get();
 	}
 }

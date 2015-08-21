@@ -8,7 +8,7 @@ public class CustomTypeListenersModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bindListener(Matchers.any(), new ScopeTypeListener());
-		bindListener(Matchers.any(), new UserIdTypeListener());
+		bindListener(Matchers.any(), new UserCommentTypeListener());
+		bindListener(Matchers.any(), new UserNameTypeListener());
 	}
 }

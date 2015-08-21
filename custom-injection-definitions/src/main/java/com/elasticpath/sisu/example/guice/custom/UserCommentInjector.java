@@ -4,14 +4,14 @@ import java.lang.reflect.Field;
 
 import com.google.inject.MembersInjector;
 
-public class ScopeInjector<T> implements MembersInjector<T> {
+public class UserCommentInjector<T> implements MembersInjector<T> {
 
-	private static final String[] scopes = {"What's a scope?", "I'm a scope!", "You're a scope", "I'm a store..."};
+	private static final String[] scopes = {"likes OSGI!", "hates OSGI!"};
 	private static int counter = scopes.length;
 
 	private final Field field;
 
-	ScopeInjector(Field field) {
+	UserCommentInjector(Field field) {
 		this.field = field;
 		field.setAccessible(true);
 	}

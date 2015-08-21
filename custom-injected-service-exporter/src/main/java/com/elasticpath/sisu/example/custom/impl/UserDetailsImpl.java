@@ -5,18 +5,18 @@ import javax.inject.Named;
 
 import com.elasticpath.sisu.example.apis.User;
 
-import com.elasticpath.sisu.example.guice.custom.InjectScope;
-import com.elasticpath.sisu.example.guice.custom.InjectUserId;
+import com.elasticpath.sisu.example.guice.custom.UserComment;
+import com.elasticpath.sisu.example.guice.custom.UserName;
 
 @Named
 public class UserDetailsImpl implements User {
 
-	@InjectUserId
-	private String userId;
-	@InjectScope
-	private String storeCode;
+	@UserName
+	private String userName;
+	@UserComment
+	private String comment;
 
 	public String printUserDetails() {
-		return "UserID[" + userId + "] Scope[" + storeCode + "]";
+		return userName + " " + comment;
 	}
 }

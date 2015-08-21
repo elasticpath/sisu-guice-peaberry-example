@@ -14,6 +14,7 @@
 	<modules>
 		<module>service-apis</module>
 		<module>managed-service-exporter</module>
+		<module>secondary-service-exporter</module>
 		<module>custom-injection-definitions</module>
 		<module>custom-injected-service-exporter</module>
 		<module>service-consumer</module>

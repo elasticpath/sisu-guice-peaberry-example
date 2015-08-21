@@ -5,6 +5,6 @@ import java.lang.annotation.RetentionPolicy;
 
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface InjectScope {
+public @interface UserComment {
 
 }

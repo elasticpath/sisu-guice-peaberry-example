@@ -6,8 +6,8 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 /**
  * Created by conor on 19/08/15.
  */
-@ObjectClassDefinition(id = "com.elasticpath.sisu.example.apis.WordGenerator",
-		pid = {"com.elasticpath.sisu.example.service.managed.impl.WordGeneratorImpl" })
+@ObjectClassDefinition(id = "com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator",
+		pid = {"com.elasticpath.sisu.example.service.managed.impl.ThreeWordGenerator" })
 public interface Configuration {
 
 	public static final String PROPERTY_ONE_NAME = "property.one";
